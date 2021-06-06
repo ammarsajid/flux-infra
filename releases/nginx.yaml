@@ -1,0 +1,23 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: nginx
+  namespace: demo-flux
+  annotations:
+    fluxcd.io/automated: "false"
+spec:
+  releaseName: nginx-web
+  chart:
+    git: ssh://git@github.com/ammarsajid/flux-infra
+    ref: main
+    path: charts/webserver
+  values:
+    image:
+      repository: nginx
+      tag: latest
+    resources:
+      requests:
+        memory: 32Mi
+        cpu: 10m
+    service:
+      type: ClusterIP
