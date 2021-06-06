@@ -10,7 +10,7 @@ spec:
   chart:
     git: ssh://git@github.com/ammarsajid/flux-infra
     ref: master
-    path: charts/webserver
+    path: chart/webserver
   values:
     image:
       repository: nginx
