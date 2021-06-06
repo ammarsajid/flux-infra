@@ -9,7 +9,7 @@ spec:
   releaseName: nginx-web
   chart:
     git: ssh://git@github.com/ammarsajid/flux-infra
-    ref: main
+    ref: master
     path: charts/webserver
   values:
     image:
