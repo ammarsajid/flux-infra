@@ -13,11 +13,5 @@ spec:
     path: charts/webserver
   values:
     image:
-      repository: stable/nginx
+      repository: nginx
       tag: latest
-    resources:
-      requests:
-        memory: 32Mi
-        cpu: 10m
-    service:
-      type: ClusterIP
