@@ -14,4 +14,4 @@ spec:
   values:
     image:
       repository: nginx
-      tag: latest
+      tag: 1.14.2
