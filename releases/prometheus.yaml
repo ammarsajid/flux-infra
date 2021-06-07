@@ -1,0 +1,16 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: prometheus-adapter
+  namespace: monitoring
+spec:
+  releaseName: prometheus-adapter
+  targetNamespace: monitoring
+  timeout: 300
+  chart:
+    repository: https://prometheus-community.github.io/helm-charts
+    name: prometheus-adapter
+    version: 2.12.3
+  values:
+    prometheus:
+      url: http://kube-prometheus-stack-prometheus.monitoring.svc.cluster.local
